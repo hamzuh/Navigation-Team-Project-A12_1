@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://de7gc3dk8rsms"]
+
+[ext_resource type="Texture2D" uid="uid://d3rrtib81p2ht" path="res://Art/duck.png" id="1_paeek"]
+[ext_resource type="Script" uid="uid://3xcv62o8sakd" path="res://Scripts/goal.gd" id="1_s0pnd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0pnd"]
+size = Vector2(10, 10)
+
+[node name="Goal" type="CharacterBody2D"]
+script = ExtResource("1_s0pnd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_paeek")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s0pnd")
+disabled = true

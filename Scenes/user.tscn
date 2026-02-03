@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://gkbmfcg6tvk7"]
+
+[ext_resource type="Script" uid="uid://dv3dql8eaptha" path="res://Scripts/user.gd" id="1_lw5pd"]
+[ext_resource type="Texture2D" uid="uid://cb2ijd8gcuudk" path="res://Art/redShip.png" id="2_lw5pd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o87ar"]
+size = Vector2(12, 12)
+
+[node name="User" type="CharacterBody2D"]
+script = ExtResource("1_lw5pd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_lw5pd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o87ar")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(1, 0, 0, 1)
+debug_path_custom_point_size = 3.0
+debug_path_custom_line_width = 3.0

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgq6eqlphiscu"]
+
+[ext_resource type="Texture2D" uid="uid://cjmyf6imjpvpp" path="res://Art/daltonFloor1.png" id="1_7u4ml"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16p8j"]
+size = Vector2(73, 81)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_7u4ml"]
+vertices = PackedVector2Array(712, 78, 606.10156, 78, 607.89844, -108.24219, 785.9375, -112.72656, 784.9375, 62.796875, 726, 75.96875, 984, 34.773438, 940.0625, 35.757813, 940.9375, -112.11719, 998.9375, -112.859375, 997.9375, 64, 984, 64, 905, 34.78125, 811.0625, 36.78125, 811.9375, -112.90625, 914, -112.078125, 914, 64, 905, 65.203125, 1165.0625, -111.92969, 1165.9297, 31.859375, 1088.4297, 30.882813, 1025.8672, -111.0625, 1024.1172, 31, 1070, 31, 1086.4219, 76.96875, 1070, 64, 726, 141.95313, 929.9297, 142.95313, 929.0625, 284, 712, 284)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(6, 9, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(12, 15, 16, 17), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(22, 21, 20, 23), PackedInt32Array(23, 20, 24, 25), PackedInt32Array(25, 24, 5, 10), PackedInt32Array(11, 10, 5, 17), PackedInt32Array(26, 27, 28, 29), PackedInt32Array(26, 29, 0, 5), PackedInt32Array(5, 4, 17), PackedInt32Array(17, 16, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(598, -118, 596, 88, 702, 88, 702, 294, 939, 294, 940, 133, 736, 132, 736, 86, 1096, 87, 1098, 41, 1176, 42, 1175, -122, 1016, -121, 1014, 41, 1060, 41, 1060, 54, 1008, 54, 1009, -123, 931, -122, 930, 46, 974, 45, 974, 54, 924, 54, 924, -122, 802, -123, 801, 47, 895, 45, 895, 55, 795, 53, 796, -123)])
+
+[node name="Level 1" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7u4ml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(253.5, 164.5)
+shape = SubResource("RectangleShape2D_16p8j")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_7u4ml")
