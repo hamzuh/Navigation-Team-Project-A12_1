@@ -12,7 +12,7 @@ script = ExtResource("1_m8nr8")
 
 [node name="goal" parent="." instance=ExtResource("2_m8nr8")]
 z_index = 1
-position = Vector2(1119, -69)
+position = Vector2(531, 29)
 
 [node name="user" parent="." instance=ExtResource("2_hewda")]
 z_index = 1
