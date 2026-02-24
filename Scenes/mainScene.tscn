@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bok2q1i7er4dn"]
+[gd_scene load_steps=6 format=3 uid="uid://bok2q1i7er4dn"]
 
 [ext_resource type="PackedScene" uid="uid://bgq6eqlphiscu" path="res://Scenes/Levels/level1.tscn" id="1_ly6xb"]
 [ext_resource type="Script" uid="uid://byx2e2a5i6xcg" path="res://Scripts/main_scene.gd" id="1_m8nr8"]
 [ext_resource type="PackedScene" uid="uid://gkbmfcg6tvk7" path="res://Scenes/user.tscn" id="2_hewda"]
 [ext_resource type="PackedScene" uid="uid://de7gc3dk8rsms" path="res://Scenes/goal.tscn" id="2_m8nr8"]
+[ext_resource type="PackedScene" uid="uid://bcggeikp6jcv1" path="res://Scenes/camera.tscn" id="5_47rga"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_m8nr8")
@@ -18,6 +19,6 @@ position = Vector2(531, 29)
 z_index = 1
 position = Vector2(680, -10)
 
-[node name="Camera2D" type="Camera2D" parent="user"]
+[node name="Camera2D" parent="user" instance=ExtResource("5_47rga")]
 
 [connection signal="position_changed" from="goal" to="user" method="_on_goal_position_changed"]
