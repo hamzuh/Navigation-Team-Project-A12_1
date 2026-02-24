@@ -19,6 +19,9 @@ position = Vector2(531, 29)
 z_index = 1
 position = Vector2(680, -10)
 
-[node name="Camera2D" parent="user" instance=ExtResource("5_47rga")]
+[node name="playerfollowcam" parent="user" instance=ExtResource("5_47rga")]
+
+[node name="opencam" type="Camera2D" parent="."]
+zoom = Vector2(0.25, 0.25)
 
 [connection signal="position_changed" from="goal" to="user" method="_on_goal_position_changed"]
