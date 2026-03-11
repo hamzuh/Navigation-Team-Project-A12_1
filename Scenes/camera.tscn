@@ -3,4 +3,6 @@
 [ext_resource type="Script" uid="uid://cq1w2x6ytg2f5" path="res://Scripts/camera.gd" id="1_375tr"]
 
 [node name="Camera2D" type="Camera2D"]
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 3.0
 script = ExtResource("1_375tr")

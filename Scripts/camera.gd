@@ -9,3 +9,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		var new_zoom = zoom.y + (event.delta.y * zoom_sens)
 		zoom = Vector2(new_zoom, new_zoom)
 		zoom = zoom.clamp(min_zoom, max_zoom)
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("cam_rotate"):
+		ignore_rotation = !ignore_rotation

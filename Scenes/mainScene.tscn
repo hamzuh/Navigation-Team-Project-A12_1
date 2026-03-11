@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://byx2e2a5i6xcg" path="res://Scripts/main_scene.gd" id="1_m8nr8"]
 [ext_resource type="PackedScene" uid="uid://gkbmfcg6tvk7" path="res://Scenes/user.tscn" id="2_hewda"]
 [ext_resource type="PackedScene" uid="uid://de7gc3dk8rsms" path="res://Scenes/goal.tscn" id="2_m8nr8"]
-[ext_resource type="PackedScene" uid="uid://bcggeikp6jcv1" path="res://Scenes/camera.tscn" id="5_47rga"]
+[ext_resource type="PackedScene" uid="uid://d0und3qtk4ugl" path="res://Scenes/UI/room_picker.tscn" id="5_47rga"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_m8nr8")
@@ -13,15 +13,18 @@ script = ExtResource("1_m8nr8")
 
 [node name="goal" parent="." instance=ExtResource("2_m8nr8")]
 z_index = 1
-position = Vector2(531, 29)
+position = Vector2(861, -33)
 
 [node name="user" parent="." instance=ExtResource("2_hewda")]
 z_index = 1
 position = Vector2(680, -10)
 
-[node name="playerfollowcam" parent="user" instance=ExtResource("5_47rga")]
-
 [node name="opencam" type="Camera2D" parent="."]
 zoom = Vector2(0.25, 0.25)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("5_47rga")]
+
 [connection signal="position_changed" from="goal" to="user" method="_on_goal_position_changed"]
+[connection signal="position_selected" from="CanvasLayer/Control" to="goal" method="_on_control_position_selected"]

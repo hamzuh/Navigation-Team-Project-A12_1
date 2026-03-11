@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var follow_cam = $user/playerfollowcam
-@onready var open_cam = $opencam
+@onready var follow_cam = $user.get_node("Sprite2D/playcam")
+@onready var open_cam = $opencam 
 
 func _ready():
 	follow_cam.make_current()
